@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-flow: column wrap;
+}
+
+h1 {
+    font-family: "Kumbh Sans", sans-serif;
+    color: #0063db;
+    font-size: 40px;
+    justify-content: center;
+}
+
+p {
+    font-family: "Raleway", sans-serif;
+    margin: 5px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+#button {
+    margin: 20px;
+}
+
+#photo-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#card {
+    align-items: center;
+    margin: 10px;
+    display: flex;
+}
+
+#card-img {
+    margin: 10px;
+    position: relative;
+    max-width: min-content;
+}
+
+#loading {
+    width: 2rem;
+    height: 2rem;
+    border: 5px solid #f3f3f3;
+    border-top: 6px solid #0063db;
+    border-radius: 100%;
+    margin: auto;
+    visibility: hidden;
+}
+
+#card-img:hover {
+    transform: scale(1.2);
+    position: relative;
+}
+
+.blurred {
+    backdrop-filter: blur(10px);
+    max-width: auto;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#error-message {
+    font-family: "Kumbh Sans", sans-serif;
+    color: #0063db;
+    font-size: 20px;
+}
+
+.required-border {
+    border: 1.5px solid #ff0000;
+}

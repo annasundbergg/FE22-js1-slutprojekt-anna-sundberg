@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="lib/anime.min.js" defer></script>
+        <script src="js/script.js" defer></script>
+        <link rel="shortcut icon" href="#" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Slutprojekt Flickr Bildgalleri</title>
+    </head>
+    <body>
+        <div id="overlay"></div>
+        <h1>
+            Anna's <img src="images/Flickr_logo.png" width="100px" /> gallery
+        </h1>
+        <p>
+            Search for photos by entering a search text and amount of photos.
+            You can also choose what size and how to sort them
+        </p>
+
+        <form action="">
+            <input
+                required
+                type="text"
+                id="text-input"
+                placeholder="Search photo by text"
+            />
+            <input
+                required
+                type="number"
+                id="amount-input"
+                placeholder="Amount of photos"
+            />
+            <select name="size" id="photo-size" required>
+                <option value="placeholder" disabled selected hidden>
+                    Choose size...
+                </option>
+                <option value="n">Small</option>
+                <option value="z">Medium</option>
+                <option value="b">Large</option>
+            </select>
+            <select name="sort-by" id="sort-by" required>
+                <option value="relevance">Relevance</option>
+                <option value="date-posted-desc">Date uploaded</option>
+                <option value="interestingness-desc">Interestingness</option>
+            </select>
+            <div id="button"><button id="showBtn">Show Photos</button></div>
+        </form>
+        <div id="loading"></div>
+
+        <p id="click-image">Click image to open in new tab</p>
+        <p id="hover-image">Hover on image to focus</p>
+        <div id="photo-container"></div>
+
+        <p id="error-message"></p>
+        <p id="field-required"></p>
+    </body>
+</html>
