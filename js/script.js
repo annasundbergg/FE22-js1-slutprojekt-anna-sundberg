@@ -23,6 +23,7 @@ const loading = anime(loadingAnimation);
 function getPhotos(event) {
     event.preventDefault();
     displayLoading();
+    console.log(document.getElementById("text-input").value);
 
     const textInput = document.getElementById("text-input").value.toLowerCase();
     const amountInput = document.getElementById("amount-input").value;
@@ -45,7 +46,15 @@ function getPhotos(event) {
         })
         .then((data) => {
             hideLoading();
-            showData(data, selectedSize);
+            if (data.photos.photo.length == 0){
+                clickImageP.style.display = "none";
+                hoverImageP.style.display = "none";
+                const errorText = document.getElementById("error-message");
+                errorText.innerText = "No photos was found with the given search text. Try a different text"
+            }
+            else {
+                showData(data, selectedSize);
+            }
         })
         .catch(handleError);
 }
@@ -56,6 +65,7 @@ function showData(data, selectedSize) {
     hoverImageP.style.display = "none";
     const searchText = document.getElementById("text-input").value;
     const searchAmount = document.getElementById("amount-input").value;
+    
 
     // possible if statements when to show "field required"
     if (
